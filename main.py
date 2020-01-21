@@ -13,7 +13,7 @@ def download(song):
     with open(os.path.join(working_dir, "downloads", str(song['Key']) + ".zip"), "wb") as f:
         f.write(response.content)
 
-with open(os.path.join(working_dir, "combinedScrappedData.json")) as f:
+with open(os.path.join(working_dir, "combinedScrappedData.json"), "rb") as f:
     data = json.load(f)
 
 if not os.path.isdir(download_dir):
