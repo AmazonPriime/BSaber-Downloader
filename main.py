@@ -1,5 +1,5 @@
 import sys, os, requests, json, argparse
-from functions import str2bool, int_check, difficulty_check, get_songids
+from functions import str2bool, int_check, difficulty_check, get_songids, download
 from functions import difficulties
 
 
@@ -37,7 +37,8 @@ songs_difference = [song for song in songs_available if song['Key'] not in songs
 # download songs from songs_difference list
 c = 0
 for song in songs_difference:
-    download(song)
+    download(song, args.location)
     c += 1
     print(f"{c}/{len(songs_difference)} songs", end = "\r")
 print(f"{c}/{len(songs_difference)} songs")
+print("Finished.")

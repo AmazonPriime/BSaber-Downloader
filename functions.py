@@ -1,4 +1,5 @@
 import argparse, os, requests
+from zipfile import ZipFile
 
 difficulties = ("Easy", "Normal", "Hard", "Expert", "ExpertPlus")
 non_dirs = ("__pycache__", ".git", ".DS_Store")
@@ -44,9 +45,18 @@ def get_songids(path):
     return ids
 
 
+# Extracts the zip file and removes the zip file once extracted
+def extractZip(path):
+    with ZipFile(path, "r") as zip:
+        os.mkdir(path.replace(".zip", ""))
+        zip.extractall(path.replace(".zip", ""))
+    os.remove(path)
+
+
 # Downloads the song from beatsaver
 def download(song, location):
     url = "https://beatsaver.com/api/download/key/%s" % song['Key']
     response = requests.get(url)
     with open(os.path.join(location, song['Key']) + ".zip", "wb") as f:
         f.write(response.content)
+    extractZip(os.path.join(location, song['Key']) + ".zip")
