@@ -1,11 +1,17 @@
 # BSaber-Downloader
 
-Downloads songs from BSaber using data from [https://github.com/andruzzzhka/BeatSaberScrappedData](https://github.com/andruzzzhka/BeatSaberScrappedData) based on their difficulty, star rating and whether or not they're ranked.
+Downloads songs from [BSaber](https://bsaber.com/) using data from [andruzzzhka/BeatSaberScrappedData](https://github.com/andruzzzhka/BeatSaberScrappedData) based on their difficulty, star rating and whether or not they're ranked.
 
-To use this just download the combinedScrappedData from the link above and run the program with it in the same directory as the main.py.
+Usage:
+* Download the zip or clone the project to your own system.
+* Download the ```combinedScrappedData.json``` from [here](https://github.com/andruzzzhka/BeatSaberScrappedData/blob/master/combinedScrappedData.json) and store it in the same directory as ```main.py```.
+* If it's not installed, install the ```requests``` module: ```pip3 install requests```.
+* Run program from terminal/cmd/powershell with command: ```python3 main.py <CustomLevels folder> <True/False> <integer > 0> <difficulty>```
+  * Difficulties accepted: "Easy", "Normal", "Hard", "Expert" or "ExpertPlus"
+* If your arguments are correct the songs will be downloaded to your CustomLevels folder.
 
-* You may need to install the ```requests``` module if it's not already installed: ```pip3 install requests```.
+**CustomLevels folder is located in your ```Beat Saber_Data``` folder, this is found within your Steam folder in ```Program Files (x86)```**
 
-If you'd like to use this for yourself and don't want to the default settings: Expert+, Ranked and 4 star+.
+Example: ```C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Beat Saber_Data\CustomLevels```
 
-Then you just need to alter the if statement on line 20.
+Example: ```python3 main.py "C:\Program Files (x86)\Steam\steamapps\common\Beat Saber\Beat Saber_Data\CustomLevels" True 5 Expert```
