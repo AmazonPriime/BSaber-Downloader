@@ -48,5 +48,5 @@ def get_songids(path):
 def download(song, location):
     url = "https://beatsaver.com/api/download/key/%s" % song['Key']
     response = requests.get(url)
-    with open(location + ".zip", "wb") as f:
+    with open(os.path.join(location, song['Key']) + ".zip", "wb") as f:
         f.write(response.content)
