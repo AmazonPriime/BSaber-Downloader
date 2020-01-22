@@ -4,6 +4,8 @@ Downloads songs from BSaber using data from [https://github.com/andruzzzhka/Beat
 
 To use this just download the combinedScrappedData from the link above and run the program with it in the same directory as the main.py.
 
+* You may need to install the ```requests``` module if it's not already installed: ```pip3 install requests```.
+
 If you'd like to use this for yourself and don't want to the default settings: Expert+, Ranked and 4 star+.
 
 Then you just need to alter the if statement on line 20.
