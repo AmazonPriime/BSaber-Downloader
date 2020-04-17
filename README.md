@@ -1,5 +1,7 @@
 # BSaber-Downloader
 
+## No longer working as beatsaver have added cloudflare to their site, will update in the future
+
 Downloads songs from [BSaber](https://bsaber.com/) using data from [andruzzzhka/BeatSaberScrappedData](https://github.com/andruzzzhka/BeatSaberScrappedData) based on their difficulty, star rating and whether or not they're ranked.
 
 Usage:
